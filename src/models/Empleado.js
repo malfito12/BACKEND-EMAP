@@ -7,6 +7,12 @@ var EMPLEADOSCHEMA={
         trim:true,
         unique:true
     },
+    filename:String,
+    path:String,
+    originalname:String,
+    mimetype:String,
+    size:Number,
+
     firstNameEmp:String,
     lastNameEmpP:String,
     lastNameEmpM:String,
@@ -20,16 +26,18 @@ var EMPLEADOSCHEMA={
     sexoEmp:String,
     numCelEmp:String,
     dirEmp:String,
-    photoImgEmp:String,
+    // photoImgEmp:String,
     nacionalityEmp:String,
     civilStatusEmp:String,
     professionEmp:String,
     institutionDegreeEmp:String,
     ObserEmp:String,
     fechaNacEmp:String,
+
     fechaIng:Date,
     fechaReg:Date,
     fechaBaja:Date,
+    estadoEmp:String,
 
     // emp_id_doc:Number,
 
@@ -60,7 +68,7 @@ var EMPLEADOSCHEMA={
     // cod_tcon:Number,
     // cod_thor:Number,
     // tip_reg:String,
-    // estado:String,
+
     // interinato:String,
     // escalafon:String,
     // af_sind:String,

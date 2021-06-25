@@ -109,34 +109,34 @@ router.put('/user/:id', async (req, res) => {
     })
     res.status(200).json({message:'usuario actualizado'})
 })
-router.patch('/user', (req, res, next) => {
-    var params = req.query
-    var data = req.body
-    if (params.id == null) {
-        res.status(300).json({
-            "msn": "faltan parametos"
-        })
-        return;
-    }
-    var objkeys = Object.keys(data)
-    for (var i = 0; i < objkeys.length; i++) {
-        if (!checkkeys(objkeys[i])) {
-            res.status(300).json({
-                "msn": "tus parametos son iconrrectos" + objkeys[i]
-            })
-            return;
-        }
-    }
-    USER.updateOne({ _id: params.id }, data).exec((err, docs) => {
-        if (err) {
-            res.status(300).json({
-                "msn": "error en la base de datos"
-            })
-            return;
-        }
-        res.status(200).json(docs)
-    })
-})
+// router.patch('/user', (req, res, next) => {
+//     var params = req.query
+//     var data = req.body
+//     if (params.id == null) {
+//         res.status(300).json({
+//             "msn": "faltan parametos"
+//         })
+//         return;
+//     }
+//     var objkeys = Object.keys(data)
+//     for (var i = 0; i < objkeys.length; i++) {
+//         if (!checkkeys(objkeys[i])) {
+//             res.status(300).json({
+//                 "msn": "tus parametos son iconrrectos" + objkeys[i]
+//             })
+//             return;
+//         }
+//     }
+//     USER.updateOne({ _id: params.id }, data).exec((err, docs) => {
+//         if (err) {
+//             res.status(300).json({
+//                 "msn": "error en la base de datos"
+//             })
+//             return;
+//         }
+//         res.status(200).json(docs)
+//     })
+// })
 const checkkeys = key => {
     for (var j = 0; j < KEYS.length; j++) {
         if (key == KEYS[j]) {
